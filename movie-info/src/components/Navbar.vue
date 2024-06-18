@@ -1,28 +1,29 @@
 <script>
-export default {
-    name:'NavbarComponent'
-}
+
 </script>
 
 <template>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Movies</a>
-        <a href="#">About</a>
+    <nav class="nav">
+        <a href="javascript:#">Home</a>
+        <a href="javascript:#">Movies</a>
+        <a href="javascript:#">About</a>
     </nav>
+
 </template>
 
 <style scoped>
-nav {
-    width: 100%;
-    background: #000;
-    padding: 20px;
-    display: flex;
+.nav {
+    display:flex;
+    background-color:#000;
     justify-content: center;
-    gap: 2em;
+    align-content: center;
+    padding:2rem 0;
+    gap:2rem;
 }
-nav a {
+
+.nav a {
+    color:#fff;
+    font-size:18px;
     text-decoration: none;
-    color: #fff;
 }
 </style>

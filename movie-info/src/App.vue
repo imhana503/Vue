@@ -1,111 +1,107 @@
 <script>
-import data from './assets/movies'; //영화데이터
-import Navbar from './components/Navbar.vue';
-import Modal from './components/Modal.vue';
-import Event from './components/Event.vue';
-import Movies from './components/Movies.vue';
-import Search from './components/Search.vue';
-
+import data from './assets/movies'; /* data */
+import Movies from './components/Movies.vue'; 
+import Modal from './components/Modal.vue'; 
+import Navbar from './components/Navbar.vue'; 
+import Event from './components/Event.vue'; 
+import SearchBar from './components/SearchBar.vue'; 
 
 export default{
   components:{
-    Navbar,
-    Modal,
-    Event,
-    Movies,
-    Search,
+    Movies:Movies,
+    Modal:Modal,
+    Navbar:Navbar,
+    Event:Event,
+    SearchBar:SearchBar,
   },
   data(){
     return{
-      isModal: false,
-      selectedMovie:0,
       data:data,
       data_temp:[...data],
+      isModal:false,
+      selectedMovie:0,
       text:[
         'NETPLIX 강렬한 운명의 드라마, 경기크리처',
         '디즈니 100주년 기념작, 위시',
         '그날, 대한민국의 운명이 바뀌었다, 서울의 봄'
       ],
-      eventTextNum:0,
+      eventNum:0,
       interval:null,
     }
   },
   methods: {
-    increaseLike(id) {
-      this.data.find((movie)=> {
-          if( movie.id === id ){
-            movie.like++;
-          }
-        }
-      )
+    increseLike(id){
+      this.data.find((item)=> { return item.id == id ? item.like++ : null })
     },
-    searchMovie(title){
-      this.data_temp = this.data_temp.filter((movie)=> movie.title.includes(title));      
+    filterMovie(movieName){
+      this.data_temp = this.data.filter((item)=> { return item.title.includes(movieName) })
     },
-    showAllMovie(){
-      this.data_temp = [...data];
+    showMovie(){
+      this.data_temp = [...this.data];
     }
   },
-  mounted(){
+  mounted() {
     this.interval = setInterval(()=>{
-      if( this.text.length -1 === this.eventTextNum  ){
-        this.eventTextNum = 0;
-      }
-      this.eventTextNum++;
-    },3000)
+      this.eventNum === this.text.length-1 ? this.eventNum = 0 : this.eventNum++;     
+    }, 1000);
   },
   unmounted() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   },
 }
 </script>
 
 <template>
   <Navbar/>
-  <Event :text="text[eventTextNum]"/>
-  
-  <Search
-    :data="data_temp"
-    @searchMovie="searchMovie($event)"
+  <Event
+    :text="text[eventNum]"   
   />
-  <p><button @click="showAllMovie">전체보기</button></p>
+  <SearchBar
+    :data="data_temp"
+    @filterMovie="filterMovie($event)"
+  />
 
-  <h1>영화정보</h1>
+  <div>
+    <button @click="showMovie">전체보기</button>
+  </div>
+
   <Movies
     :data="data_temp"
-    @openModal="isModal=true, selectedMovie=$event"
-    @handleLike="increaseLike($event)"
+    @increseLike="increseLike($event)"
+    @openModal="isModal = true; selectedMovie=$event"
   />
-
-  <Modal
-    :selectedMovie="selectedMovie"
+  <Modal 
     :isModal="isModal"
+    :selectedMovie="selectedMovie"
     :data="data"
-    @closeModal="isModal=false"
+    @closeModal="isModal = false"
   />
+  
 </template>
 
-<style scoped>
-.bg-yellow {
-  background: gold;
-  padding: 10px;
-}
-
+<style>
 * {
   box-sizing: border-box;
-  padding:0;
   margin: 0;
 }
 
 body {
-  padding:0;
-  margin: 0;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
-.container {
-  padding: 20px;
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
 }
 
+p {
+  margin-bottom: 0.5rem;
+}
 
+button {
+  cursor: pointer;
+}
 
 </style>
