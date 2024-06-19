@@ -1,5 +1,5 @@
 <script setup>
-import SearchBar from './SearchBar.vue';
+import SearchBar from './Searchbar.vue';
 import WeatherInfo from './WeatherInfo.vue';
 
 </script>
