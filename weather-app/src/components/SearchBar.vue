@@ -1,57 +1,51 @@
 <script setup>
-    import { ref } from 'vue';
+import { ref } from 'vue';
 
-    const inputText = ref('seoul');
-</script>
+const inputText = ref('');
+const emits = defineEmits(['searchInput']);
+
+</script> 
 
 <template>
-    <div class="search-bar">
-        <form @submit.prevent>
-            <div class="form-group">
-                <input 
-                    @input="inputText = $event.target.value"
-                    type="search" 
-                    placeholder="지역을 입력해 주세요"
-                >
-                <button @click="
-                
-                    $store.commit('changeCity', inputText);
-                    $store.dispatch('getWeather');
-                ">
-                    <font-awesome-icon class="icon" icon="magnifying-glass" />
-                </button>
-            </div>
-        </form>
-    </div>
-    
+<div class="search">
+    <input 
+        type="search"
+        placeholder="지역을 입력해주세요"
+        @change="
+            inputText = $event.target.value;
+            emits('searchInput', inputText);    
+            $event.target.value = '';        
+        "
+    >
+    <button>
+        <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="icon" />
+    </button>
+</div>
 </template>
 
-<style scoped lang="scss">
-.search-bar {
-    padding: 8px 20px;
-    border-radius: 40px;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 0 20px;
-    color: #333;
-    form {
-        .form-group{
-            display: flex;
-            input{
-                width: 100%;
-                border: none;
-                padding: 1em 0;
-                font-size: 18px;
-                outline: none;
-            }
-            button {
-                background: transparent;
-                border: none;
-                &:hover { cursor: pointer; }
-                .icon { font-size: 24px; }
-            }
+<style lang="scss">
+.search {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px;
+    position: relative;
+    input {
+        display: block;
+        width:100%;
+        padding:10px;
+        padding-right:30px;
+        border:1px solid rgb(186, 186, 186);
+        border-radius: 20px;
+    }
+    button {
+        position:absolute;
+        top:50%;
+        right:10px;
+        transform: translateY(-50%);
+        .icon {
+            font-size:17px
         }
     }
-  
 }
 </style>

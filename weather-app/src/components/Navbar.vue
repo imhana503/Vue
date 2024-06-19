@@ -1,33 +1,27 @@
 <script setup>
-
-</script>
+const props = defineProps({
+    toggle : Boolean
+}); 
+const emits = defineEmits(['buttonToggle']);
+</script> 
 
 <template>
     <nav class="navbar">
-        <button class="toggle" @click="$store.commit('toggleButton')">
-            <font-awesome-icon class="icon" icon="bars" />
+        <button @click="emits('buttonToggle', props.toggle = !props.toggle)">  
+            <font-awesome-icon :icon="['fas', 'bars']" class="ico"/>
         </button>
     </nav>
-
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .navbar {
-    background: #fff;
-    width: 100%;
-    padding: 20px;
-    display: flex;
+    display:flex;
     justify-content: end;
-    
-    button {
-      border: none;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .icon {
-      color: #333;
-      font-size: 24px;
+    align-content: center;
+    height:50px;
+    padding:0 10px;
+    .ico {
+        font-size:20px
     }
 }
 </style>
