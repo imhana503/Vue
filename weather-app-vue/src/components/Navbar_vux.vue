@@ -1,13 +1,6 @@
-<script setup>
-import { useStore } from './../store/store';
-import { storeToRefs } from 'pinia';
-
-const store = useStore();
-const { toggle } = storeToRefs(store);
-</script>
 <template>
     <nav class="navbar">
-        <button @click="toggle = !toggle">  
+        <button @click="$store.state.toggle = !$store.state.toggle">  
             <font-awesome-icon :icon="['fas', 'bars']" class="ico"/>
         </button>
     </nav>

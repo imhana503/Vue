@@ -1,15 +1,24 @@
+
+<script setup>
+import { useStore } from './../store/store';
+import { storeToRefs } from 'pinia';
+
+const store = useStore();
+const { weatherData } = storeToRefs(store);
+</script>
+
 <template>
 <div class="weather">
     <div class="weather-item">  
         <img 
-            :src="`https://openweathermap.org/img/wn/${$store.state.weatherData.icon}@2x.png`" 
-            :alt="$store.state.weatherData.text"
+            :src="`https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`" 
+            :alt="weatherData.text"
         >
-        {{ $store.state.weatherData.icon }}
+        {{ weatherData.icon }}
     </div>
-    <div class="weather-item temp">{{ $store.state.weatherData.temp }}</div>
-    <div class="weather-item">{{ $store.state.weatherData.text }}</div>
-    <div class="weather-item">{{ $store.state.weatherData.city }}, {{ $store.state.weatherData.location }}</div>
+    <div class="weather-item temp">{{ weatherData.temp }}</div>
+    <div class="weather-item">{{ weatherData.text }}</div>
+    <div class="weather-item">{{ weatherData.city }}, {{ weatherData.location }}</div>
 </div>
 </template>
 

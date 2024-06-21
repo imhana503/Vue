@@ -4,12 +4,12 @@ import MainComp from './components/MainComp.vue';
 import About from './components/About.vue';
 
 import { onMounted, ref } from 'vue';
-import { useStore } from './store/store';
+import { useStore } from 'vuex';
 
 const store = useStore();
 
 onMounted(()=>{
-  store.getWeather()
+  store.dispatch('getWeather');
 });
 
 </script> 
@@ -17,7 +17,7 @@ onMounted(()=>{
 <template>
   <Navbar />
   <MainComp 
-    v-if="!toggle"
+    v-if="$store.state.toggle"
   />
   <About v-else/>  
 </template>

@@ -1,10 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-import { useStore } from './../store/store';
 
 const inputText = ref('');
-const store = useStore();
-
 </script> 
 
 <template>
@@ -14,8 +11,8 @@ const store = useStore();
         placeholder="지역을 입력해주세요"
         @change="
             inputText = $event.target.value;
-            store.searchInput(inputText);
-            store.getWeather();
+            $store.commit('searchInput', inputText);
+            $store.dispatch('getWeather');
             $event.target.value = '';        
         "
     >

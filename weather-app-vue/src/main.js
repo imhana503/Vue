@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue';
-import store from './store/store';
+import { createPinia } from 'pinia'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -14,7 +14,9 @@ import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
 library.add(faBars, faMagnifyingGlass);
 
+const pinia = createPinia(); 
+
 createApp(App)
-    .use(store)
+    .use(pinia)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')
