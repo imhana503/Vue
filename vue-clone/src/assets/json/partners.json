@@ -1,0 +1,256 @@
+{
+    "data":[
+        {
+            "title": "KB금융그룹",
+            "thumb": "partners/@logo_kbfg@3x.png"
+          },
+          {
+            "title": "KB국민은행",
+            "thumb": "partners/@logo_kbbank@3x.png"
+          },
+          {
+            "title": "IBK기업은행",
+            "thumb": "partners/@logo_ibk@3x.png"
+          },
+          {
+            "title": "KDB산업은행",
+            "thumb": "partners/@logo_kdbbank@3x.png"
+          },
+          {
+            "title": "하나은행",
+            "thumb": "partners/@logo_hanabank.png"
+          },
+          {
+            "title": "KB손해보험",
+            "thumb": "partners/@logo_kbinsure.png"
+          },
+          {
+            "title": "KDB생명",
+            "thumb": "partners/@logo_kdblife@3x.png"
+          },
+          {
+            "title": "한화생명",
+            "thumb": "partners/@logo_hanhwa_life@3x.png"
+          },
+          {
+            "title": "교보생명",
+            "thumb": "partners/@logo_kyobo.png"
+          },
+          {
+            "title": "신한라이프(오렌지라이프)",
+            "thumb": "partners/@logo_shinhanlife.png"
+          },
+          {
+            "title": "신한생명",
+            "thumb": "partners/@logo_sinhan.png"
+          },
+          {
+            "title": "신한EZ손해보험",
+            "thumb": "partners/@logo_shinhanez@3x.png"
+          },
+          {
+            "title": "삼성생명",
+            "thumb": "partners/@logo_sslife@3x.png"
+          },
+          {
+            "title": "삼성화재",
+            "thumb": "partners/@logo_ssfire@3x.png"
+          },
+          {
+            "title": "삼성증권",
+            "thumb": "partners/@logo_ssstock@3x.png"
+          },
+          {
+            "title": "ABL생명",
+            "thumb": "partners/@logo_abl@3x.png"
+          },
+          {
+            "title": "키움증권",
+            "thumb": "partners/@logo_kiumstock@3x.png"
+          },
+          {
+            "title": "한국투자증권",
+            "thumb": "partners/@logo_korstock@3x.png"
+          },
+          {
+            "title": "하나금융투자",
+            "thumb": "partners/@logo_hana.png"
+          },
+          {
+            "title": "현대카드",
+            "thumb": "partners/@logo_hyundaicard@3x.png"
+          },
+          {
+            "title": "KB저축은행",
+            "thumb": "partners/@logo_kbsavings@3x.png"
+          },
+          {
+            "title": "삼성선물",
+            "thumb": "partners/@logo_ssf.png"
+          },
+          {
+            "title": "MBK파트너스",
+            "thumb": "partners/@logo_mbk@3x.png"
+          },
+          {
+            "title": "미래에셋자산운용",
+            "thumb": "partners/@logo_miraeasset@3x.png"
+          },
+          {
+            "title": "한국예탁결제원",
+            "thumb": "partners/@logo_ksd@3x.png"
+          },
+          {
+            "title": "삼성전자",
+            "thumb": "partners/@logo_sselectronic@3x.png"
+          },
+          {
+            "title": "삼성물산",
+            "thumb": "partners/@logo_samsungcnt@3x.png"
+          },
+          {
+            "title": "LG전자",
+            "thumb": "partners/@logo_lge.png"
+          },
+          {
+            "title": "LS엠트론",
+            "thumb": "partners/@logo_lsmtron.jpg"
+          },
+          {
+            "title": "CJ",
+            "thumb": "partners/@logo_cj@3x.png"
+          },
+          {
+            "title": "SK텔레콤",
+            "thumb": "partners/@logo_skt@3x.png"
+          },
+          {
+            "title": "SK하이닉스",
+            "thumb": "partners/@logo_skhynix@3x.png"
+          },
+          {
+            "title": "SK플래닛",
+            "thumb": "partners/@logo_skplanet@3x.png"
+          },
+          {
+            "title": "SK에너지",
+            "thumb": "partners/@logo_skenergy.png"
+          },
+          {
+            "title": "SK행복나래",
+            "thumb": "partners/@logo_happy.png"
+          },
+          {
+            "title": "11번가",
+            "thumb": "partners/@logo_11st@3x.png"
+          },
+          {
+            "title": "스타필드",
+            "thumb": "partners/@logo_starfilde@3x.png"
+          },
+          {
+            "title": "오리온",
+            "thumb": "partners/@logo_orion@3x.png"
+          },
+          {
+            "title": "아레나",
+            "thumb": "partners/@logo_arena.jpg"
+          },
+          {
+            "title": "타이틀리스트",
+            "thumb": "partners/@logo_titleist@3x.png"
+          },
+          {
+            "title": "아모레퍼시픽",
+            "thumb": "partners/@logo_amore@3x.png"
+          },
+          {
+            "title": "GSK",
+            "thumb": "partners/@logo_gsk.png"
+          },
+          {
+            "title": "JKL파트너스",
+            "thumb": "partners/@logo_jkl@3x.png"
+          },
+          {
+            "title": "금융결제원",
+            "thumb": "partners/@logo_kftc@3x.png"
+          },
+          {
+            "title": "mySUNI",
+            "thumb": "partners/@logo_mysuni@3x.png"
+          },
+          {
+            "title": "KGC인삼공사",
+            "thumb": "partners/@logo_kgc@3x.png"
+          },
+          {
+            "title": "크라운해태",
+            "thumb": "partners/@logo_crown@3x.png"
+          },
+          {
+            "title": "알체라",
+            "thumb": "partners/@logo_alchera.png"
+          },
+          {
+            "title": "HDC신라면세점",
+            "thumb": "partners/@logo_hdc@3x.png"
+          },
+          {
+            "title": "아웃백",
+            "thumb": "partners/@logo_outback@3x.png"
+          },
+          {
+            "title": "한화갤러리아",
+            "thumb": "partners/@logo_hhgall@3x.png"
+          },
+          {
+            "title": "닌텐도",
+            "thumb": "partners/@logo_nintendo@3x.png"
+          },
+          {
+            "title": "로젠주식회사",
+            "thumb": "partners/@logo_logen_co@3x.png"
+          },
+          {
+            "title": "야놀자",
+            "thumb": "partners/@logo_yanolja@3x.png"
+          },
+          {
+            "title": "pintel",
+            "thumb": "partners/@logo_pintel@3x.png"
+          },
+          {
+            "title": "ACRYL",
+            "thumb": "partners/@logo_acryl@3x.png"
+          },
+          {
+            "title": "한화정밀기계",
+            "thumb": "partners/@logo_hanhwa_pm@3x.png"
+          },
+          {
+            "title": "H&Q Korea",
+            "thumb": "partners/@logo_hnq@3x.png"
+          },
+          {
+            "title": "(주)더제이알디",
+            "thumb": "partners/@logo_thejrd@3x_new.png"
+          },
+          {
+            "title": "마음AI",
+            "thumb": "partners/@logo_maumai@3x.png"
+          },
+          {
+            "title": "법률사무소 현명",
+            "thumb": "partners/@logo_law_hm@3x.png"
+          },
+          {
+            "title": "(주)마임",
+            "thumb": "partners/@logo_maiim@3x.png"
+          },
+          {
+            "title": "씨벤티지",
+            "thumb": "partners/@logo_seavantage@3x.png"
+          }
+    ]
+}

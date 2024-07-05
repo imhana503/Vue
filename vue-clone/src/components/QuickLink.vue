@@ -1,0 +1,29 @@
+<template>
+    <div class="out-link">
+        <ul>
+            <li>
+                <a
+                href="https://www.facebook.com/pulip.comms"
+                target="_blank"
+                >Facebook</a>
+            </li>
+            <li>
+                <a
+                href="https://blog.naver.com/pulip_plog"
+                target="_blank"
+                >Blog</a>
+            </li>
+            <li>
+                <a
+                href="https://www.instagram.com/pulip.comms"
+                target="_blank"
+                >Instagram</a>
+            </li>
+        </ul>
+    </div>
+</template>
+<script>
+export default {
+    name:'QuickLink'
+}
+</script>
