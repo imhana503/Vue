@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+
+  <style>
+    .swiper-container {
+      width: 100%;
+      height: 500px; /* Swiper의 높이 설정 */
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 내부 스크롤 영역 스타일링 */
+    .swiper-slide-active .inner-scroll {
+      width:80%;
+      max-height: 400px; /* 내부 스크롤 가능한 최대 높이 */
+      overflow-y: auto; /* 세로 스크롤 활성화 */
+      padding: 10px; /* 내부 패딩 설정 */
+      background-color: #ffffff; /* 내부 배경색 */
+      border: 1px solid #cccccc; /* 내부 테두리 설정 */
+      border-radius: 5px; /* 내부 모서리 둥글기 설정 */
+    }
+    .icon {width:30px; height:30px; background-color: blue; position: absolute; top:0; left:0; z-index:2; transition: all 2s;}
+  </style>
+  <title>Swiper Horizontal Scroll with Nested Vertical Scroll</title>
+</head>
+<body>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        Slide 1
+
+        <a href="javascript:;" data-navi="2" class="navi-link">2번 이동</a>
+      </div>
+      <div class="swiper-slide">
+        <!-- 내부 스크롤 영역 추가 -->
+        <div class="inner-scroll">
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+          <p>내부 스크롤 영역입니다. 긴 컨텐츠를 포함할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <!-- 추가적인 슬라이드는 필요에 따라 추가 -->
+    </div>
+    <div class="icon"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <script src="swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'horizontal', // 가로 스크롤 방향 설정
+      slidesPerView: 'auto',    // 슬라이드 하나씩 보이게 설정
+      spaceBetween: 0,          // 슬라이드 사이의 간격
+      mousewheel: true,         // 마우스 휠 사용 설정
+      pagination: {
+        el: '.swiper-pagination', // 페이지 네비게이션 요소
+        clickable: true,           // 클릭 가능하도록 설정
+      },
+      on: {
+        slideChange:function(){
+          console.log('슬라이드가 변경되었습니다.');
+
+          const ico = document.querySelector('.icon');
+
+          // 현재 활성화된 슬라이드의 인덱스를 가져오기
+          var activeIndex = this.activeIndex;
+
+          if( activeIndex == 0 ){
+              ico.style.top  = '0';
+              ico.style.left  = '20%'
+          }
+
+          if( activeIndex == 1 ){
+              ico.style.top  = '50px';
+              ico.style.left  = '50%'
+          }
+
+          if( activeIndex == 2 ){
+              ico.style.top  = '20%';
+              ico.style.left  = '50%'
+          }
+        },
+        slideChangeTransitionEnd: function () {
+            console.log('슬라이드 변경 전환 완료');
+        },
+
+        init: function () {
+          // 내부 스크롤 영역에 대해 스크롤 이벤트 전파 막기
+          var innerScrollElements = document.querySelectorAll('.inner-scroll');
+          innerScrollElements.forEach(function (element) {
+            element.addEventListener('wheel', function (e) {
+              e.stopPropagation();
+            });
+          });
+
+
+          // 내비게이션 링크 클릭 시 슬라이드 이동
+          var naviLinks = document.querySelectorAll('.navi-link');
+            naviLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    var slideIndex = parseInt(link.getAttribute('data-navi'));
+                    swiper.slideTo(slideIndex);
+                });
+            });
+        },
+
+        
+      },
+    });
+  </script>
+
+</body>
+</html>
