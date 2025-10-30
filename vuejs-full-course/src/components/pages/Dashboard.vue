@@ -2,6 +2,14 @@
 import Grid from '..//Grid.vue';
 import { gymHealthFacts } from '../../utils/index';
 
+const props = defineProps({
+  handleSelectWorkout: Function,
+  handleResetPlan: Function,
+  firstIncompleteWorkoutIndex: Number
+});
+
+
+
 // 0과 배열 길이 - 1 사이의 임의의 정수를 생성합니다.
 const randomNumber = Math.floor(Math.random() * gymHealthFacts.length);
 const todaysFact = gymHealthFacts[randomNumber];
@@ -14,9 +22,9 @@ const todaysFact = gymHealthFacts[randomNumber];
       <h2>Welcome Smoldier</h2>
       <div>
         <p class="tip"><strong>Daily Tip</strong><br/>{{ todaysFact }}</p>
-        <button>Start workout &rarr;</button>
+        <button @click="() => handleSelectWorkout(firstIncompleteWorkoutIndex < 0 ? 0 : firstIncompleteWorkoutIndex )">Start workout &rarr;</button>
       </div>
-      <Grid/>
+      <Grid v-bind="props"/>
     </div>
   </section>
 </template>

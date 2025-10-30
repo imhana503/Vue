@@ -1,7 +1,15 @@
 <script setup>
 import { workoutProgram } from '../utils/index';
 
-const workoutTypes = ['Push', 'Pull', 'Legs']
+defineProps({
+  handleSelectWorkout: Function,
+  handleResetPlan: Function,
+  firstIncompleteWorkoutIndex: Number
+});
+
+const workoutTypes = ['Push', 'Pull', 'Legs'];
+
+
 
 </script>
 
@@ -11,6 +19,8 @@ const workoutTypes = ['Push', 'Pull', 'Legs']
       class="card-button plan-card"
       :key="workoutIdx"
       v-for="(workout, workoutIdx) in Object.keys(workoutProgram)"
+      @click="()=>handleSelectWorkout(workoutIdx)"
+      :disabled="workoutIdx > 0 && workoutIdx > firstIncompleteWorkoutIndex"
     >
       <div>
         <p>Day {{ workoutIdx < 9 ? `0${workoutIdx+1}` : workoutIdx + 1 }}</p>
@@ -20,7 +30,11 @@ const workoutTypes = ['Push', 'Pull', 'Legs']
       </div>
       <h3>{{ workoutTypes[workoutIdx % 3] }}</h3>
     </button>
-    <button class="card-button plan-card-reset">
+    <button 
+      :disabled="firstIncompleteWorkoutIndex != -1"
+      @click="handleResetPlan"
+      class="card-button plan-card-reset"
+    >
       <p>Reset</p>
       <i class="fa-solid fa-rotate-left"></i>
     </button>
