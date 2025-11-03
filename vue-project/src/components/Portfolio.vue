@@ -9,7 +9,7 @@
           <small class="mb-3 text-secondary">{{  item.skills }}</small>
           <router-link
             class="btn btn-primary"  
-            :to="`/datail/${item.id}`"
+            :to="`/detail/${item.id}`"
           >상세보기</router-link>
         </li>    
       </ul>
@@ -19,7 +19,7 @@
 <script setup>  
 const props = defineProps({
   data: Array,
-})
+});
 </script>
 
 <style lang="scss">
